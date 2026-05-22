@@ -1,0 +1,101 @@
+import java.util.Scanner;
+
+public class BajosElectricos {
+ public static void main(String[] args) {
+        Scanner papu = new Scanner(System.in);
+        int opcion;
+        System.out.println("==================================");
+        System.out.println("   BAJOS ELÉCTRICOS   ");
+        System.out.println("==================================");
+        System.out.println("1. Fender American Professional II Jazz Bass");
+        System.out.println("2. Fender American Professional II V Jazz Bass");
+        System.out.println("3. Ibanez Prestige SR4505");
+        System.out.println("4. Ibanez SR5005 OL");
+        System.out.println("5. Ibanez SR3505 BK");
+        System.out.println("6. Ibanez SR3500 BK");
+        System.out.println("7. Ibanez SR2600 CBB");
+        System.out.println("8. Ibanez BTB805MS");
+        System.out.println("9. Ibanez EHB1000 AOM");
+        System.out.println("10. Ibanez BTB705LM");
+        System.out.println("==================================");
+        System.out.print("Seleccione un bajo (1-10): ");
+        opcion = papu.nextInt();
+        System.out.println("===== INFORMACIÓN DEL BAJO =====");
+        switch (opcion) {
+            case 1:
+                System.out.println("Marca: Fender");
+                System.out.println("Modelo: American Professional II Jazz Bass");
+                System.out.println("Descripción: Bajo de 4 cuerdas con sonido clásico y gran comodidad.");
+                System.out.println("Precio: S/ 8,799.00");
+                break;
+
+            case 2:
+                System.out.println("Marca: Fender");
+                System.out.println("Modelo: American Professional II V Jazz Bass");
+                System.out.println("Descripción: Bajo profesional de 5 cuerdas ideal para funk y jazz.");
+                System.out.println("Precio: S/ 8,599.00");
+                break;
+
+            case 3:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: Prestige SR4505");
+                System.out.println("Descripción: Bajo premium de 5 cuerdas con excelente definición.");
+                System.out.println("Precio: S/ 8,499.00");
+                break;
+
+            case 4:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: SR5005 OL");
+                System.out.println("Descripción: Bajo elegante con sonido moderno y potente.");
+                System.out.println("Precio: S/ 8,499.00");
+                break;
+
+            case 5:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: SR3505 BK");
+                System.out.println("Descripción: Bajo de 5 cuerdas con gran versatilidad tonal.");
+                System.out.println("Precio: S/ 8,199.00");
+                break;
+
+            case 6:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: SR3500 BK");
+                System.out.println("Descripción: Bajo ligero y cómodo para presentaciones en vivo.");
+                System.out.println("Precio: S/ 7,999.00");
+                break;
+
+            case 7:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: SR2600 CBB");
+                System.out.println("Descripción: Bajo de 4 cuerdas con acabado moderno y sonido brillante.");
+                System.out.println("Precio: S/ 6,999.00");
+                break;
+
+            case 8:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: BTB805MS");
+                System.out.println("Descripción: Bajo multiescala de 5 cuerdas para mayor precisión.");
+                System.out.println("Precio: S/ 5,999.00");
+                break;
+
+            case 9:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: EHB1000 AOM");
+                System.out.println("Descripción: Bajo ergonómico sin clavijero con diseño moderno.");
+                System.out.println("Precio: S/ 5,499.00");
+                break;
+
+            case 10:
+                System.out.println("Marca: Ibanez");
+                System.out.println("Modelo: BTB705LM");
+                System.out.println("Descripción: Bajo de 5 cuerdas con sonido profundo y profesional.");
+                System.out.println("Precio: S/ 4,399.00");
+                break;
+
+            default:
+                System.out.println("Opción inválida. Debe seleccionar un número del 1 al 10.");
+        }
+
+
+    }
+}
