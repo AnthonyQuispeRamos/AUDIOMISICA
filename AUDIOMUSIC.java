@@ -11,7 +11,7 @@ public class AUDIOMUSIC {
         String ubiDelRecojo="";
         String respuestaLUGAR="";
         int opcion,documento;
-        double monto_TOTAL=40,pago,vuelto,igv;
+        double monto_TOTAL,pago,vuelto,igv;
         boolean datosCorrectos;
         System.out.println("=====================================");
         System.out.println("      CARRITO DE COMPRAS-AUDIOMUSIC");
