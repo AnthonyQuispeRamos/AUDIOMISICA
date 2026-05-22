@@ -1,0 +1,84 @@
+
+    static double total = 0;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        do {
+            System.out.println("\n===== AUDIOMUSICA =====");
+            System.out.println("1. Ver Pianos");
+            System.out.println("2. Ver Baterias");
+            System.out.println("3. Ver Microfonos");
+            System.out.println("4. Ver Total");
+            System.out.println("5. Salir");
+            System.out.print("Ingrese una opcion: ");
+            opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    mostrarPianos();
+                    break;
+                case 2:
+                    mostrarBaterias();
+                    break;
+                case 3:
+                    mostrarMicrofonos();
+                    break;
+                case 4:
+                    System.out.println("TOTAL GENERAL: S/ " + total);
+                    break;
+                case 5:
+                    System.out.println("Saliendo del sistema...");
+                    break;
+                default:
+                    System.out.println("Opcion incorrecta");
+            }
+        } while (opcion != 5);
+        sc.close();
+    }
+    public static void mostrarPianos() {
+        String[] pianos = {
+                "Roland GO KEYS 3",
+                "Roland FP-10",
+                "Roland FP-E50"
+        };
+        double[] precios = {
+                1799, 2799, 4399
+        };
+        System.out.println("===== PIANOS =====");
+        for (int i = 0; i < pianos.length; i++) {
+            System.out.println((i + 1) + ". " + pianos[i]);
+            System.out.println("Precio: S/ " + precios[i]);
+            total = total + precios[i];
+        }
+    }
+    public static void mostrarBaterias() {
+        String[] baterias = {
+                "Roland TD-02KV",
+                "Roland TD-07DMK",
+                "Roland TD-17KV2"
+        };
+        double[] precios = {
+                3299, 4699, 7499
+        };
+        System.out.println("===== BATERIAS =====");
+        for (int i = 0; i < baterias.length; i++) {
+            System.out.println((i + 1) + ". " + baterias[i]);
+            System.out.println("Precio: S/ " + precios[i]);
+            total = total + precios[i];
+        }
+    }
+    public static void mostrarMicrofonos() {
+        String[] microfonos = {
+                "Shure SM58",
+                "AKG P120",
+                "Rode NT1"
+        };
+        double[] precios = {
+                499, 459, 1299
+        };
+        System.out.println("===== MICROFONOS =====");
+        for (int i = 0; i < microfonos.length; i++) {
+            System.out.println((i + 1) + ". " + microfonos[i]);
+            System.out.println("Precio: S/ " + precios[i]);
+            total = total + precios[i];
+        }
+    }
