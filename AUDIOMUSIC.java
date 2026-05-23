@@ -154,12 +154,12 @@ public class AUDIOMUSIC {
         System.out.println("El monto total ah pagar es:   " + monto_TOTAL);
         do {
             System.out.println("Ingrese los 16 digitos de la tarjeta");
-            nroTarjeta = sc.nextLine();
+            nroTarjeta = sc.next();
             sc.nextLine();
             System.out.println("Ingrese la fecha de caducidad (MM/AA)");
-            fechaVnecimiento = sc.nextLine();
+            fechaVnecimiento = sc.next();
             System.out.println("Ingrese el codgio de seguridad");
-            cvv = sc.nextLine();
+            cvv = sc.next();
             boolean tarjetaOK=(nroTarjeta.length()==16);
             boolean cvvOk=(cvv.length()==3);
             boolean fechaEstructuraOK=(fechaVnecimiento.length()==5&&fechaVnecimiento.contains("/"));
