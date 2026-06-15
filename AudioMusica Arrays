@@ -1,0 +1,585 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class audio_music {
+    static Scanner escaner = new Scanner(System.in);
+    static double total = 0;
+    static ArrayList<String> bajosElectricos = new ArrayList<>();
+    static ArrayList<Double> preciosBajosElectricos = new ArrayList<>();
+    static ArrayList<String> estuches = new ArrayList<>();
+    static ArrayList<Double> preciosEstuches = new ArrayList<>();
+    static ArrayList<String> cuerdas = new ArrayList<>();
+    static ArrayList<Double> preciosCuerdas = new ArrayList<>();
+    static ArrayList<String> guitarrasAcusticas = new ArrayList<>();
+    static ArrayList<Double> preciosGuitarrasAcusticas = new ArrayList<>();
+    static ArrayList<String> guitarrasElectricas = new ArrayList<>();
+    static ArrayList<Double> preciosGuitarrasElectricas = new ArrayList<>();
+    static ArrayList<String> bajosMedios = new ArrayList<>();
+    static ArrayList<Double> preciosBajosMedios = new ArrayList<>();
+    static ArrayList<String> pianos = new ArrayList<>();
+    static ArrayList<Double> preciosPianos = new ArrayList<>();
+    static ArrayList<String> baterias = new ArrayList<>();
+    static ArrayList<Double> preciosBaterias = new ArrayList<>();
+    static ArrayList<String> microfonos = new ArrayList<>();
+    static ArrayList<Double> preciosMicrofonos = new ArrayList<>();
+    static ArrayList<String> carritoNombres = new ArrayList<>();
+    static ArrayList<Double> carritoPrecios = new ArrayList<>();
+    public static void main(String[] args) {       inicializarDatos();
+        String correoREGISTRO = "";
+        String contraseñaREGISTRO = "";
+        String correoVERIFICACION = "";
+
+        String contraseñaVERIFICACION = "";
+        String nombreSESION = "";
+        boolean INICIO_SE;
+        do {
+            INICIO_SE = false;
+            System.out.println("""
+                     █████╗ ██╗   ██╗██████╗ ██╗ ██████╗ ███╗   ███╗██╗   ██╗███████╗██╗ ██████╗
+                    ██╔══██╗██║   ██║██╔══██╗██║██╔═══██╗████╗ ████║██║   ██║██╔════╝██║██╔════╝
+                    ███████║██║   ██║██║  ██║██║██║   ██║██╔████╔██║██║   ██║███████╗██║██║     
+                    ██╔══██║██║   ██║██║  ██║██║██║   ██║██║╚██╔╝██║██║   ██║╚════██║██║██║     
+                    ██║  ██║╚██████╔╝██████╔╝██║╚██████╔╝██║ ╚═╝ ██║╚██████╔╝███████║██║╚██████╗
+                    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝ ╚═════╝ ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝
+                    
+                    ♫                      ██╗   ██╗██████╗ ███████╗██╗   ██╗                ♫ 
+                     ♫                     ██║   ██║██╔══██╗██╔════╝██║   ██║                  ♫
+                    ♫                      ██║   ██║██████╔╝███████╗██║   ██║                ♫
+                     ♫                     ██║   ██║██╔═══╝ ██╔══╝  ██║   ██║                  ♫  
+                    ♫                      ╚██████╔╝██║     ███████╗╚██████╔╝                ♫
+                     ♫                      ╚═════╝ ╚═╝     ╚══════╝ ╚═════╝                   ♫
+                    """);
+            System.out.println("============================================");
+            System.out.println("            INICIAR SESION");
+            System.out.println("============================================");
+            System.out.println("1.----- REGISTRARSE CON GOOGLE");
+            System.out.println("2.----- INICIAR SESION GOOGLE");
+            System.out.println("3.----- ENTRAR COMO INVITADO");
+            System.out.println("4.----- SALIR");
+            int opcionSESION = escaner.nextInt();
+            switch (opcionSESION) {
+                case 1:
+                    System.out.println("-------------------------------------");
+                    System.out.println("        REGISTRO - GOOGLE");
+                    System.out.println("-------------------------------------");
+                    System.out.println("INGRESE SU CORREO ELECTRONICO:");
+                    correoREGISTRO = escaner.next();
+                    System.out.println("INGRESE SU CONTRASEÑA:");
+                    contraseñaREGISTRO = escaner.next();
+                    System.out.println("INGRESE SU NOMBRE DE USUARIO:");
+                    nombreSESION = escaner.next();
+                    if (nombreSESION.equals("") || contraseñaREGISTRO.equals("") || correoREGISTRO.equals("")) {
+                        System.out.println("UNO DE LOS DATOS ESTA VACIO!!");
+                        INICIO_SE = false;
+                    } else {
+                        System.out.println("-------------------------------------");
+                        System.out.println("    CONFIRMA LOS DATOS NUEVAMENTE");
+                        System.out.println("-------------------------------------");
+                        System.out.println("INGRESE SU CORREO ELECTRONICO:");
+                        correoVERIFICACION = escaner.next();
+                        System.out.println("INGRESE SU CONTRASEÑA:");
+                        contraseñaVERIFICACION = escaner.next();
+                    }
+                    if (contraseñaVERIFICACION.equals(contraseñaREGISTRO) && correoVERIFICACION.equals(correoREGISTRO)) {
+                        System.out.println("DATOS REGISTRADOS CORRECTAMENTE...");
+                        System.out.println("-------------------------------------");
+                        System.out.println("            INICIAR SESION");
+                        System.out.println("-------------------------------------");
+                        System.out.println("1.----- INICIAR SESION GOOGLE");
+                        System.out.println("2.----- SALIR");
+                        int opcionYIR = escaner.nextInt();
+                        switch (opcionYIR) {
+                            case 1:
+                                System.out.println("    INGRESE SU CORREO Y CONTRASEÑA DE GOOGLE");
+                                System.out.println("---------------------------------------------");
+                                System.out.println("INGRESE SU CORREO ELECTRONICO:");
+                                correoVERIFICACION = escaner.next();
+                                System.out.println("INGRESE SU CONTRASEÑA:");
+                                contraseñaVERIFICACION = escaner.next();
+                                if (contraseñaVERIFICACION.equals(contraseñaREGISTRO) && correoVERIFICACION.equals(correoREGISTRO)) {
+                                    System.out.println("DATOS CORRECTOS...");
+                                    System.out.println("INICIANDO SESION.......");
+                                    INICIO_SE = true;
+                                } else {
+                                    System.out.println("DATOS INCORRECTOS!!!");
+                                    INICIO_SE = false;
+                                }
+                                break;
+                            case 2:
+                                System.out.println("SALIENDO.....");
+                                System.exit(0);
+                                break;
+                            default:
+                                System.out.println("OPCION NO VALIDA VUELVELO A INTENTAR!!");
+                                INICIO_SE = false;
+                        }
+                    } else {
+                        System.out.println("DATOS INCORRECTOS... INTENTALO DE NUEVO!");
+                        INICIO_SE = false;
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("------------------------");
+                    System.out.println("INICIO DE SESION GOOGLE");
+                    System.out.println("------------------------");
+                    System.out.println("INGRESE SU CORREO ELECTRONICO:");
+                    escaner.nextLine();
+                    String correoGOOGLE = escaner.nextLine();
+                    System.out.println("INGRESE SU CONTRASEÑA:");
+                    String contraseñaGOOGLE = escaner.nextLine();
+                    if (contraseñaGOOGLE.equals("") || correoGOOGLE.equals("")) {
+                        System.out.println("UNO DE LOS DATOS ESTA VACIO!!");
+                        INICIO_SE = false;
+                    } else {
+                        System.out.println("¡¡INICIO DE SESION CORRECTAMENTE!!");
+                        INICIO_SE = true;
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("USUARIO INVITADO");
+                    INICIO_SE = true;
+                    break;
+
+                case 4:
+                    System.out.println("SALIENDO.....");
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("OPCION INCORRECTA!");
+            }
+        } while (!INICIO_SE);
+
+        menuPrincipal();
+    }
+    public static void inicializarDatos() {
+        // Bajos Electricos
+        bajosElectricos.add("Bajo de 4 cuerdas con sonido clasico y gran comodidad (MARCA-FENDER)");
+        preciosBajosElectricos.add(8799.0);
+        bajosElectricos.add("Bajo profesional de 5 cuerdas ideal para funk y jazz (MARCA-FENDER)");
+        preciosBajosElectricos.add(8599.0);
+        bajosElectricos.add("Bajo premium de 5 cuerdas con excelente definicion (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(8499.0);
+        bajosElectricos.add("Bajo elegante con sonido moderno y potente (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(8499.0);
+        bajosElectricos.add("Bajo de 5 cuerdas con gran versatilidad tonal (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(8199.0);
+        bajosElectricos.add("Bajo ligero y comodo para presentaciones en vivo (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(7999.0);
+        bajosElectricos.add("Bajo de 4 cuerdas con acabado moderno y sonido brillante (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(6999.0);
+        bajosElectricos.add("Bajo multiescala de 5 cuerdas para mayor precision (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(5999.0);
+        bajosElectricos.add("Bajo ergonomico sin clavijero con diseno moderno (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(5499.0);
+        bajosElectricos.add("Bajo de 5 cuerdas con sonido profundo y profesional (MARCA-IBANEZ)");
+        preciosBajosElectricos.add(4399.0);
+        // Estuches
+        estuches.add("Estuche de bajo electrico Rockbag RB20845B COLOR NEGRO");
+        preciosEstuches.add(419.0);
+        estuches.add("Estuche de bajo RockBag RB20605/PLUS-PREMIUN");
+        preciosEstuches.add(399.0);
+        estuches.add("Estuche de bajo acustico Rockbag RB 20510 Starline");
+        preciosEstuches.add(369.0);
+        estuches.add("Estuche de bajo electrico Ibanez IBB541TW");
+        preciosEstuches.add(209.0);
+        estuches.add("Estuche de bajo electrico Ibanez IBB541 COLOR NEGRO");
+        preciosEstuches.add(199.0);
+        estuches.add("Estuche de bajo electrico Ibanez IBB541-COLOR BEIGE");
+        preciosEstuches.add(169.0);
+        estuches.add("Estuche de bajo electrico Rockbag RB20505B BK");
+        preciosEstuches.add(159.0);
+        estuches.add("Estuche de bajo acustico Rockbag RB 20520 B SERIE STUDENT");
+        preciosEstuches.add(109.0);
+        estuches.add("Estuche de bajo Acustico IBANEZ IABB101");
+        preciosEstuches.add(79.0);
+        estuches.add("Estuche de bajo electrico IBANEZ IBB101");
+        preciosEstuches.add(69.0);
+        // Cuerdas
+        cuerdas.add("Cuerdas para bajo electrico Ernie Ball 50-105 Stainless Steel Flatwound");
+        preciosCuerdas.add(239.0);
+        cuerdas.add("Set 6 cuerdas para bajo electrico Ernie Ball 32-130 Slinky");
+        preciosCuerdas.add(219.0);
+        cuerdas.add("Set 5 cuerdas para bajo electrico Ernie Ball 40-125");
+        preciosCuerdas.add(199.0);
+        cuerdas.add("Cuerdas para bajo electrico Ernie Ball 55-110");
+        preciosCuerdas.add(149.0);
+        cuerdas.add("Set de 6 cuerdas Daddario para bajo EXL170-6");
+        preciosCuerdas.add(149.0);
+        cuerdas.add("Cuerdas bajo Ernie Ball PO2821 BASS 5-STR POWER");
+        preciosCuerdas.add(115.0);
+        cuerdas.add("Cuerdas para bajo Ernie Ball P02836 BASS 5-STR SLINKY");
+        preciosCuerdas.add(115.0);
+        cuerdas.add("Cuerdas para bajo Ernie Ball PO2832 BASS REGLR SLINKY");
+        preciosCuerdas.add(99.0);
+        cuerdas.add("Cuerdas para bajo Ernie Ball PO2833 BASS HYBRD SLINKY");
+        preciosCuerdas.add(99.0);
+        cuerdas.add("Cuerdas para bajo Daddario EXL170 (TP)");
+        preciosCuerdas.add(95.0);
+        // Guitarras Acusticas
+        guitarrasAcusticas.add("Yamaha F310");
+        preciosGuitarrasAcusticas.add(599.0);
+        guitarrasAcusticas.add("Yamaha FX310AII");
+        preciosGuitarrasAcusticas.add(799.0);
+        guitarrasAcusticas.add("Fender FA-125");
+        preciosGuitarrasAcusticas.add(699.0);
+        guitarrasAcusticas.add("Fender CD-60");
+        preciosGuitarrasAcusticas.add(999.0);
+        guitarrasAcusticas.add("Ibanez V50NJP");
+        preciosGuitarrasAcusticas.add(649.0);
+        guitarrasAcusticas.add("Ibanez AW54");
+        preciosGuitarrasAcusticas.add(1299.0);
+        guitarrasAcusticas.add("Takamine GD11M");
+        preciosGuitarrasAcusticas.add(899.0);
+        guitarrasAcusticas.add("Takamine GD20");
+        preciosGuitarrasAcusticas.add(1399.0);
+        guitarrasAcusticas.add("Cort AD810");
+        preciosGuitarrasAcusticas.add(549.0);
+        guitarrasAcusticas.add("Cort Earth 70");
+        preciosGuitarrasAcusticas.add(899.0);
+        // Guitarras Electricas
+        guitarrasElectricas.add("Fender Squier Stratocaster");
+        preciosGuitarrasElectricas.add(999.0);
+        guitarrasElectricas.add("Fender Squier Telecaster");
+        preciosGuitarrasElectricas.add(1099.0);
+        guitarrasElectricas.add("Ibanez GRX70QA");
+        preciosGuitarrasElectricas.add(1199.0);
+        guitarrasElectricas.add("Ibanez Gio GRG121");
+        preciosGuitarrasElectricas.add(999.0);
+        guitarrasElectricas.add("Yamaha Pacifica 012");
+        preciosGuitarrasElectricas.add(899.0);
+        guitarrasElectricas.add("Yamaha Pacifica 112V");
+        preciosGuitarrasElectricas.add(1399.0);
+        guitarrasElectricas.add("Epiphone Les Paul Special II");
+        preciosGuitarrasElectricas.add(1299.0);
+        guitarrasElectricas.add("Epiphone SG Special");
+        preciosGuitarrasElectricas.add(1199.0);
+        guitarrasElectricas.add("Cort X100");
+        preciosGuitarrasElectricas.add(899.0);
+        guitarrasElectricas.add("Jackson JS11");
+        preciosGuitarrasElectricas.add(1099.0);
+        // Bajos Medios
+        bajosMedios.add("Ibanez GSR200");
+        preciosBajosMedios.add(899.0);
+        bajosMedios.add("Ibanez SR300");
+        preciosBajosMedios.add(1499.0);
+        bajosMedios.add("Fender Squier Jazz Bass");
+        preciosBajosMedios.add(1299.0);
+        bajosMedios.add("Fender Squier Precision Bass");
+        preciosBajosMedios.add(1199.0);
+        bajosMedios.add("Yamaha TRBX174");
+        preciosBajosMedios.add(999.0);
+        bajosMedios.add("Yamaha TRBX304");
+        preciosBajosMedios.add(1599.0);
+        bajosMedios.add("Cort Action PJ");
+        preciosBajosMedios.add(799.0);
+        bajosMedios.add("Cort GB34");
+        preciosBajosMedios.add(1399.0);
+        bajosMedios.add("Jackson JS2 Spectra");
+        preciosBajosMedios.add(1299.0);
+        bajosMedios.add("Epiphone Toby Standard");
+        preciosBajosMedios.add(999.0);
+        // Pianos
+        pianos.add("Roland GO KEYS 3");
+        preciosPianos.add(1799.0);
+        pianos.add("Roland GO KEYS 5");
+        preciosPianos.add(2399.0);
+        pianos.add("Roland FP-10");
+        preciosPianos.add(2799.0);
+        pianos.add("Roland FP-E50");
+        preciosPianos.add(4399.0);
+        pianos.add("Roland FP-60X");
+        preciosPianos.add(5999.0);
+        pianos.add("Walters DK-100");
+        preciosPianos.add(2699.0);
+        pianos.add("Walters DK-100B Brown");
+        preciosPianos.add(2699.0);
+        pianos.add("Walters DK-100B Light Cherry");
+        preciosPianos.add(2399.0);
+        pianos.add("Casio Celviano AP-550");
+        preciosPianos.add(5799.0);
+        pianos.add("Roland E-X50");
+        preciosPianos.add(2099.0);
+        // Baterias
+        baterias.add("Avatar SD61-6BT");
+        preciosBaterias.add(899.0);
+        baterias.add("Avatar SD61-5BT");
+        preciosBaterias.add(799.0);
+        baterias.add("Avatar SD51-2");
+        preciosBaterias.add(699.0);
+        baterias.add("Avatar SD201-1S");
+        preciosBaterias.add(999.0);
+        baterias.add("Roland TD-02KV");
+        preciosBaterias.add(1299.0);
+        baterias.add("Roland TD-07DMK");
+        preciosBaterias.add(1799.0);
+        baterias.add("Avatar A-31");
+        preciosBaterias.add(599.0);
+        baterias.add("Roland TD-07KX");
+        preciosBaterias.add(2199.0);
+        baterias.add("Roland TD-17");
+        preciosBaterias.add(2999.0);
+        baterias.add("Roland TD-17KVX");
+        preciosBaterias.add(3999.0);
+        // Microfonos
+        microfonos.add("Shure SM58");
+        preciosMicrofonos.add(499.0);
+        microfonos.add("Shure SM7B");
+        preciosMicrofonos.add(1299.0);
+        microfonos.add("Audio-Technica AT2020");
+        preciosMicrofonos.add(399.0);
+        microfonos.add("Rode NT1-A");
+        preciosMicrofonos.add(599.0);
+        microfonos.add("AKG P220");
+        preciosMicrofonos.add(449.0);
+        microfonos.add("Sennheiser e835");
+        preciosMicrofonos.add(399.0);
+        microfonos.add("Blue Yeti");
+        preciosMicrofonos.add(449.0);
+        microfonos.add("Behringer XM8500");
+        preciosMicrofonos.add(129.0);
+        microfonos.add("Samson Q2U");
+        preciosMicrofonos.add(299.0);
+        microfonos.add("MXL 990");
+        preciosMicrofonos.add(349.0);
+    }
+    public static void menuPrincipal() {
+        int opcion;
+        do {
+            System.out.println("============================================");
+            System.out.println("       BIENVENIDO A AUDIOMUSIC");
+            System.out.println("============================================");
+            System.out.println("1.----- VER BAJOS ELECTRICOS");
+            System.out.println("2.----- VER ESTUCHES");
+            System.out.println("3.----- VER CUERDAS");
+            System.out.println("4.----- VER GUITARRAS ACUSTICAS");
+            System.out.println("5.----- VER GUITARRAS ELECTRICAS");
+            System.out.println("6.----- VER BAJOS (GAMA MEDIA)");
+            System.out.println("7.----- VER PIANOS");
+            System.out.println("8.----- VER BATERIAS");
+            System.out.println("9.----- VER MICROFONOS");
+            System.out.println("10.---- IR AL CARRITO DE COMPRAS");
+            System.out.println("11.---- ADMINISTRAR PRODUCTOS (CRUD)");
+            System.out.println("12.---- SALIR");
+            opcion = escaner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    mostrarProductos(bajosElectricos, preciosBajosElectricos, "BAJOS ELECTRICOS");
+                    break;
+                case 2:
+                    mostrarProductos(estuches, preciosEstuches, "ESTUCHES");
+                    break;
+                case 3:
+                    mostrarProductos(cuerdas, preciosCuerdas, "CUERDAS");
+                    break;
+                case 4:
+                    mostrarProductos(guitarrasAcusticas, preciosGuitarrasAcusticas, "GUITARRAS ACUSTICAS");
+                    break;
+                case 5:
+                    mostrarProductos(guitarrasElectricas, preciosGuitarrasElectricas, "GUITARRAS ELECTRICAS");
+                    break;
+                case 6:
+                    mostrarProductos(bajosMedios, preciosBajosMedios, "BAJOS MEDIOS");
+                    break;
+                case 7:
+                    mostrarProductos(pianos, preciosPianos, "PIANOS");
+                    break;
+                case 8:
+                    mostrarProductos(baterias, preciosBaterias, "BATERIAS");
+                    break;
+                case 9:
+                    mostrarProductos(microfonos, preciosMicrofonos, "MICROFONOS");
+                    break;
+                case 10:
+                    verCarrito();
+                    break;
+                case 11:
+                    menuCRUD();
+                    break;
+                case 12:
+                    System.out.println("SALIENDO.....");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("OPCION INCORRECTA!");
+            }
+        } while (opcion != 12);
+    }
+    public static void mostrarProductos(ArrayList<String> productos, ArrayList<Double> precios, String nombreCategoria) {
+        System.out.println("----------------------------");
+        System.out.println("===== " + nombreCategoria + " =====");
+        System.out.println("----------------------------");
+        for (int i = 0; i < productos.size(); i++) {
+            System.out.println((i + 1) + ". " + productos.get(i) + " - S/ " + precios.get(i));
+        }
+        System.out.println("Seleccione un producto (0 para cancelar): ");
+        int eleccion = escaner.nextInt();
+        if (eleccion >= 1 && eleccion <= productos.size()) {
+            carritoNombres.add(productos.get(eleccion - 1));
+            carritoPrecios.add(precios.get(eleccion - 1));
+            total += precios.get(eleccion - 1);
+            System.out.println("Producto agregado correctamente ✔️");
+            System.out.println("Total acumulado: S/ " + total);
+        } else if (eleccion == 0) {
+            System.out.println("Operacion cancelada");
+        } else {
+            System.out.println("Opcion no valida");
+        }
+    }
+    public static void verCarrito() {
+        if (carritoNombres.isEmpty()) {
+            System.out.println("El carrito esta vacio");
+            return;
+        }
+        System.out.println("===== CARRITO DE COMPRAS =====");
+        double subtotal = 0;
+        for (int i = 0; i < carritoNombres.size(); i++) {
+            System.out.println((i + 1) + ". " + carritoNombres.get(i) + " - S/ " + carritoPrecios.get(i));
+            subtotal += carritoPrecios.get(i);
+        }
+        System.out.println("----------------------------");
+        System.out.println("TOTAL: S/ " + subtotal);
+        System.out.println("----------------------------");
+        System.out.println("1. Confirmar compra");
+        System.out.println("2. Vaciar carrito");
+        System.out.println("3. Volver al menu");
+        int opcion = escaner.nextInt();
+        if (opcion == 1) {
+            System.out.println("Compra realizada con exito. Total: S/ " + subtotal);
+            carritoNombres.clear();
+            carritoPrecios.clear();
+            total = 0;
+        } else if (opcion == 2) {
+            carritoNombres.clear();
+            carritoPrecios.clear();
+            total = 0;
+            System.out.println("Carrito vaciado");
+        }
+    }
+    public static void menuCRUD() {
+        int opcion;
+        do {
+            System.out.println("============================================");
+            System.out.println("       ADMINISTRAR PRODUCTOS (CRUD)");
+            System.out.println("============================================");
+            System.out.println("1.----- BUSCAR PRODUCTO");
+            System.out.println("2.----- ELIMINAR PRODUCTO (BAJOS ELECTRICOS)");
+            System.out.println("3.----- ELIMINAR PRODUCTO (ESTUCHES)");
+            System.out.println("4.----- ELIMINAR PRODUCTO (CUERDAS)");
+            System.out.println("5.----- ELIMINAR PRODUCTO (GUITARRAS ACUSTICAS)");
+            System.out.println("6.----- ELIMINAR PRODUCTO (GUITARRAS ELECTRICAS)");
+            System.out.println("7.----- ELIMINAR PRODUCTO (BAJOS MEDIOS)");
+            System.out.println("8.----- ELIMINAR PRODUCTO (PIANOS)");
+            System.out.println("9.----- ELIMINAR PRODUCTO (BATERIAS)");
+            System.out.println("10.---- ELIMINAR PRODUCTO (MICROFONOS)");
+            System.out.println("11.---- SALIR AL MENU PRINCIPAL");
+            opcion = escaner.nextInt();
+            escaner.nextLine();
+            switch (opcion) {
+                case 1:
+                    crudBuscar();
+                    break;
+                case 2:
+                    crudEliminar(bajosElectricos, preciosBajosElectricos, "BAJOS ELECTRICOS");
+                    break;
+                case 3:
+                    crudEliminar(estuches, preciosEstuches, "ESTUCHES");
+                    break;
+                case 4:
+                    crudEliminar(cuerdas, preciosCuerdas, "CUERDAS");
+                    break;
+                case 5:
+                    crudEliminar(guitarrasAcusticas, preciosGuitarrasAcusticas, "GUITARRAS ACUSTICAS");
+                    break;
+                case 6:
+                    crudEliminar(guitarrasElectricas, preciosGuitarrasElectricas, "GUITARRAS ELECTRICAS");
+                    break;
+                case 7:
+                    crudEliminar(bajosMedios, preciosBajosMedios, "BAJOS MEDIOS");
+                    break;
+                case 8:
+                    crudEliminar(pianos, preciosPianos, "PIANOS");
+                    break;
+                case 9:
+                    crudEliminar(baterias, preciosBaterias, "BATERIAS");
+                    break;
+                case 10:
+                    crudEliminar(microfonos, preciosMicrofonos, "MICROFONOS");
+                    break;
+                case 11:
+                    System.out.println("Volviendo al menu principal...");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+            }
+        } while (opcion != 11);
+    }
+    public static void crudEliminar(ArrayList<String> lista, ArrayList<Double> precios, String nombreCategoria) {
+        System.out.println("--- ELIMINAR PRODUCTO DE " + nombreCategoria + " ---");
+        imprimirListaConPrecios(lista, precios);
+        System.out.println("Ingrese la posicion a eliminar:");
+        int pos = escaner.nextInt();
+        escaner.nextLine();
+        if (pos >= 0 && pos < lista.size()) {
+            String productoEliminado = lista.get(pos);
+            lista.remove(pos);
+            precios.remove(pos);
+            System.out.println("Producto " + productoEliminado + "eliminado correctamente ✔️");
+        } else {
+            System.out.println("Posicion no valida ✖️");
+        }
+    }
+    public static void imprimirListaConPrecios(ArrayList<String> lista, ArrayList<Double> precios) {
+        if (lista.isEmpty()) {
+            System.out.println("No hay productos en esta categoria");
+            return;
+        }
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(i + ". " + lista.get(i) + " - S/ " + precios.get(i));
+        }
+    }
+    public static void crudBuscar() {
+        System.out.println("--- BUSCAR PRODUCTO ---");
+        System.out.println("Ingrese el nombre exacto del producto: ");
+        String buscar = escaner.nextLine();
+        boolean encontrado = false;
+        if (bajosElectricos.contains(buscar)) {
+            System.out.println("Resultado: " + buscar + " SI existe en el sistema");
+            System.out.println("Categoria: BAJOS ELECTRICOS - Posicion: " + bajosElectricos.indexOf(buscar) + " - S/ " + preciosBajosElectricos.get(bajosElectricos.indexOf(buscar)));
+            encontrado = true;
+        }
+        if (estuches.contains(buscar)) {
+            System.out.println("Resultado: " + buscar + " SI existe en el sistema");
+            System.out.println("Categoria: ESTUCHES - Posicion: " + estuches.indexOf(buscar) + " - S/ " + preciosEstuches.get(estuches.indexOf(buscar)));
+            encontrado = true;
+        }
+        if (cuerdas.contains(buscar)) {
+            System.out.println("Resultado: " + buscar + " SI existe en el sistema");
+            System.out.println("Categoria: CUERDAS - Posicion: " + cuerdas.indexOf(buscar) + " - S/ " + preciosCuerdas.get(cuerdas.indexOf(buscar)));
+            encontrado = true;
+        }
+        if (guitarrasAcusticas.contains(buscar)) {
+            System.out.println("Resultado: " + buscar + " SI existe en el sistema");
+            System.out.println("Categoria: GUITARRAS ACUSTICAS - Posicion: " + guitarrasAcusticas.indexOf(buscar) + " - S/ " + preciosGuitarrasAcusticas.get(guitarrasAcusticas.indexOf(buscar)));
+            encontrado = true;
+        }
+        if (guitarrasElectricas.contains(buscar)) {
+            System.out.println("Resultado: " + buscar + " SI existe en el sistema");
+            System.out.println("Categoria: GUITARRAS ELECTRICAS - Posicion: " + guitarrasElectricas.indexOf(buscar) + " - S/ " + preciosGuitarrasElectricas.get(guitarrasElectricas.indexOf(buscar)));
+            encontrado = true;
+        }
+        if (bajosMedios.contains(buscar)) {
+            System.out.println("Resultado: " + buscar + " SI existe en el sistema");
+            System.out.println("Categoria: BAJOS MEDIOS - Posicion: " + bajosMedios.indexOf(buscar) + " - S/ " + preciosBajosMedios.get(bajosMedios.indexOf(buscar)));
+            encontrado = true;
+        }
+        if (pianos.contains(buscar)) {
+            System.out.println("Resultado: " + buscar + " SI existe en el sistema");
+            System.out.println("Categoria: PIANOS - Posicion: " + pianos.indexOf(buscar) + " - S/ " + preciosPianos.get(pianos.indexOf(buscar)));
+            encontrado = true;
+        }
+    }
+}
